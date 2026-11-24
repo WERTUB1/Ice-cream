@@ -1,7 +1,4 @@
-< !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><style>
-
-/* ================= БАЗОВЫЕ СТИЛИ ================= */
-* {
+< !DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rainbow Icecream</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><style>* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,7 +12,7 @@ body {
     font-family: 'Nunito', sans-serif;
     color: #1E1E1E;
     background-color: #FF94A8;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='320' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ff829b' fill-opacity='0.55' d='M0,128L80,144C160,160,320,192,480,181.3C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='320' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ff829b' fill-opacity='0.55' d='M0,128L80,144C160,160,320,192,480,181.3C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L0,320Z'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-position: 0 260px;
     background-size: 100% 340px;
@@ -28,7 +25,6 @@ h2,
 h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    color: #1E1E1E;
 }
 
 ul {
@@ -38,7 +34,7 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s ease, transform 0.25s ease;
+    transition: 0.25s ease;
 }
 
 img {
@@ -50,7 +46,7 @@ img {
 button {
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    transition: 0.25s ease;
 }
 
 button:hover {
@@ -58,16 +54,14 @@ button:hover {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
 }
 
-/* ================= ШАПКА И ЛОГОТИП В ЦЕНТРЕ ================= */
+/* ЛОГОТИП */
+
 body>a:first-of-type {
     position: absolute;
     top: 12px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 body>a:first-of-type:hover {
@@ -79,10 +73,12 @@ img.logo1 {
     height: 78px;
     object-fit: contain;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: white;
     padding: 3px;
     border: 1.5px dashed #444;
 }
+
+/* ШАПКА */
 
 header {
     padding-top: 26px;
@@ -91,13 +87,12 @@ header {
 }
 
 header nav {
-    background-color: #FFFFFF;
+    background: white;
     border: 1.5px solid #444;
     border-radius: 999px;
     max-width: 760px;
     margin: 0 auto;
     padding: 12px 32px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 header nav ul {
@@ -118,17 +113,17 @@ header nav ul li:nth-child(4) {
 header nav a {
     font-size: 14px;
     font-weight: 700;
-    color: #1E1E1E;
 }
 
 header nav a:hover {
     color: #E04F6D;
 }
 
-/* ================= СЕКЦИЯ 1: HERO ================= */
+/* HERO */
+
 #hero {
     max-width: 1120px;
-    margin: 0 auto;
+    margin: auto;
     padding: 44px 24px 70px;
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -152,29 +147,27 @@ header nav a:hover {
     font-size: 14px;
     font-weight: 600;
     max-width: 410px;
-    align-self: start;
 }
 
-#hero img.hero-image {
+#hero img {
     grid-area: image;
     width: 100%;
     max-width: 530px;
-    height: auto;
     justify-self: end;
     filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
 }
 
-#hero img.hero-image:hover {
+#hero img:hover {
     transform: scale(1.03) translateY(-4px);
 }
 
-/* ================= СЕКЦИЯ 2: МИ ДБАЄМО ПРО ТЕБЕ ================= */
+/* MENU */
+
 #menu {
-    background-color: #DCEEFF;
-    padding: 0 calc((100% - 1120px) / 2 + 24px) 55px;
+    background: #DCEEFF;
+    padding: 40px max(24px, calc((100% - 1120px)/2 + 24px)) 55px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
     grid-template-areas:
         "splash heading"
         "splash desc1"
@@ -185,14 +178,11 @@ header nav a:hover {
     position: relative;
 }
 
-#menu img.hero-image[src*="Untitled design (6) 1.png"] {
+#menu img[src*="Untitled design (6) 1.png"] {
     grid-area: splash;
     width: 100%;
     max-width: 450px;
-    height: auto;
-    justify-self: start;
     align-self: start;
-    margin-top: 0;
 }
 
 #menu h2 {
@@ -200,8 +190,7 @@ header nav a:hover {
     font-size: 40px;
     text-align: right;
     align-self: end;
-    padding-top: 52px;
-    margin-bottom: 4px;
+    padding-top: 20px;
 }
 
 #menu p:nth-of-type(1) {
@@ -209,41 +198,34 @@ header nav a:hover {
     text-align: right;
     max-width: 440px;
     justify-self: end;
-    align-self: start;
     font-size: 14px;
     font-weight: 600;
-    color: #2E2E2E;
-    margin-bottom: 18px;
 }
 
 #menu p:nth-of-type(2) {
     grid-area: story;
     font-size: 14px;
     font-weight: 600;
-    color: #2E2E2E;
     max-width: 445px;
     align-self: end;
     margin-top: 12px;
 }
 
-#menu img.hero-image[src*="Untitled design (7) 1.png"] {
+#menu img[src*="Untitled design (7) 1.png"] {
     grid-area: milk;
     width: 100%;
     max-width: 490px;
-    height: auto;
     justify-self: end;
     align-self: end;
     margin-bottom: -25px;
 }
 
-#menu img.hero-image:hover {
+#menu img:hover {
     transform: translateY(-4px);
 }
 
 #menu button {
     grid-area: buttons;
-    justify-self: start;
-    align-self: start;
     padding: 11px 24px;
     border-radius: 999px;
     font-weight: 700;
@@ -253,25 +235,20 @@ header nav a:hover {
 }
 
 #menu button:first-of-type {
-    background-color: #F5CD56;
-    color: #1E1E1E;
-}
-
-#menu button:first-of-type:hover {
-    background-color: #f0be2d;
+    background: #F5CD56;
 }
 
 #menu button:last-of-type {
-    background-color: #FFFFFF;
-    color: #1E1E1E;
+    background: white;
     border-color: #D8C99B;
     margin-left: 185px;
 }
 
-/* ================= СЕКЦИЯ 3: НАШ АСОРТИМЕНТ ================= */
+/* OFFERS */
+
 #offers {
-    background-color: #FFD6E2;
-    padding: 65px calc((100% - 1120px) / 2 + 24px) 115px;
+    background: #FFD6E2;
+    padding: 65px 24px 115px;
     position: relative;
     z-index: 2;
 }
@@ -287,11 +264,11 @@ header nav a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
     max-width: 960px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 #offers>ul>li {
-    background-color: #DCF0FF;
+    background: #DCF0FF;
     border-radius: 22px;
     padding: 0 24px 28px;
     text-align: center;
@@ -299,7 +276,7 @@ header nav a:hover {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
 #offers>ul>li:hover {
@@ -313,10 +290,6 @@ header nav a:hover {
     object-fit: contain;
     margin-top: -78px;
     margin-bottom: 12px;
-}
-
-#offers>ul>li:hover>img:first-child {
-    transform: scale(1.06);
 }
 
 #offers h3 {
@@ -334,7 +307,6 @@ header nav a:hover {
 #offers p {
     font-size: 13px;
     font-weight: 600;
-    color: #3A3A3A;
     margin-bottom: 22px;
     flex-grow: 1;
 }
@@ -343,7 +315,7 @@ header nav a:hover {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background-color: #F7B2C4;
+    background: #F7B2C4;
     border: 1.5px solid #222;
     display: flex;
     align-items: center;
@@ -351,19 +323,19 @@ header nav a:hover {
 }
 
 #offers button:hover {
-    background-color: #F5CD56;
+    background: #F5CD56;
     transform: scale(1.12);
 }
 
 #offers button img {
     width: 18px;
-    height: auto;
 }
 
-/* ================= СЕКЦИЯ 4: НЕБЕСНІ СМАКИ + ВКУСЫ ================= */
+/* APP */
+
 #app {
-    background-color: #DCEEFF;
-    padding: 0 calc((100% - 1120px) / 2 + 24px) 80px;
+    background: #DCEEFF;
+    padding: 0 24px 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -383,9 +355,8 @@ header nav a:hover {
     left: 0;
     width: 100%;
     height: 40px;
-    background-color: #DCEEFF;
-    border-top-left-radius: 50% 36px;
-    border-top-right-radius: 50% 36px;
+    background: #DCEEFF;
+    border-radius: 50% 50% 0 0;
 }
 
 #app>ul {
@@ -408,41 +379,39 @@ header nav a:hover {
     font-size: 14px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: 0.25s ease;
 }
 
 #app>ul>li:hover {
-    transform: translateY(-5px) scale(1.06) rotate(0deg) !important;
+    transform: translateY(-5px) scale(1.06);
 }
 
 #app>ul>li:nth-child(1) {
-    background-color: #FCE9B5;
+    background: #FCE9B5;
     transform: rotate(-8deg) translateY(6px);
 }
 
 #app>ul>li:nth-child(2) {
-    background-color: #B484BD;
+    background: #B484BD;
     transform: rotate(-4deg) translateY(2px);
 }
 
 #app>ul>li:nth-child(3) {
-    background-color: #8D5544;
-    color: #FFF;
-    transform: rotate(-1deg);
+    background: #8D5544;
+    color: white;
 }
 
 #app>ul>li:nth-child(4) {
-    background-color: #F497A9;
-    transform: rotate(2deg);
+    background: #F497A9;
 }
 
 #app>ul>li:nth-child(5) {
-    background-color: #9CC98D;
+    background: #9CC98D;
     transform: rotate(5deg) translateY(3px);
 }
 
 #app>ul>li:nth-child(6) {
-    background-color: #F6C85F;
+    background: #F6C85F;
     transform: rotate(8deg) translateY(8px);
 }
 
@@ -453,14 +422,9 @@ header nav a:hover {
     justify-self: center;
 }
 
-#app>img[src*="Group 63.png"]:hover {
-    transform: scale(1.03);
-}
-
 #app h2 {
     grid-area: title;
     font-size: 40px;
-    line-height: 1.08;
     text-align: center;
     align-self: end;
     margin-bottom: 14px;
@@ -479,7 +443,6 @@ header nav a:hover {
     grid-area: text;
     font-size: 14px;
     font-weight: 600;
-    color: #3A3A3A;
     text-align: center;
     max-width: 440px;
     justify-self: center;
@@ -491,33 +454,26 @@ header nav a:hover {
     padding: 12px 24px;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 14px;
     border: 1.5px solid #222;
     justify-self: center;
 }
 
 #app button:first-of-type {
-    background-color: #F5CD56;
-    color: #1E1E1E;
+    background: #F5CD56;
     margin-right: 145px;
 }
 
-#app button:first-of-type:hover {
-    background-color: #f0be2d;
-}
-
 #app button:last-of-type {
-    background-color: #FFFFFF;
-    color: #1E1E1E;
+    background: white;
     border-color: #D8C99B;
     margin-left: 115px;
 }
 
-/* ================= СЕКЦИЯ 5: КОНТАКТЫ + ПОТЕКИ ГЛАЗУРИ ================= */
+/* CONTACT */
+
 #contact {
-    background-color: #FFD6E2;
-    padding: 115px calc((100% - 1120px) / 2 + 24px) 70px;
-    position: relative;
+    background: #FFD6E2;
+    padding: 115px 24px 70px;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas:
@@ -525,6 +481,7 @@ header nav a:hover {
         "socials photo";
     align-items: center;
     gap: 20px 40px;
+    position: relative;
 }
 
 #contact::before {
@@ -534,10 +491,8 @@ header nav a:hover {
     left: 0;
     width: 100%;
     height: 92px;
-    background-repeat: repeat-x;
-    background-position: top center;
-    background-size: 360px 92px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='92' viewBox='0 0 360 92'%3E%3Cpath fill='%23ffffff' d='M0,0 L360,0 L360,34 C350,34 348,68 338,68 C328,68 326,28 312,28 C298,28 296,86 284,86 C272,86 270,32 254,32 C238,32 236,62 224,62 C212,62 210,26 192,26 C174,26 172,90 160,90 C148,90 146,34 130,34 C114,34 112,66 100,66 C88,66 86,28 68,28 C50,28 48,78 36,78 C24,78 22,32 0,34 Z'/%3E%3Crect x='25' y='10' width='8' height='3' rx='1.5' fill='%23FF6B8B' transform='rotate(25 25 10)'/%3E%3Crect x='65' y='15' width='8' height='3' rx='1.5' fill='%234ECDC4' transform='rotate(-20 65 15)'/%3E%3Crect x='115' y='12' width='8' height='3' rx='1.5' fill='%23FFD166' transform='rotate(40 115 12)'/%3E%3Crect x='158' y='22' width='8' height='3' rx='1.5' fill='%23A06CD5' transform='rotate(-35 158 22)'/%3E%3Crect x='205' y='11' width='8' height='3' rx='1.5' fill='%23FF6B8B' transform='rotate(15 205 11)'/%3E%3Crect x='255' y='16' width='8' height='3' rx='1.5' fill='%2306D6A0' transform='rotate(-25 255 16)'/%3E%3Crect x='305' y='12' width='8' height='3' rx='1.5' fill='%23FFD166' transform='rotate(30 305 12)'/%3E%3Crect x='338' y='24' width='8' height='3' rx='1.5' fill='%234ECDC4' transform='rotate(-15 338 24)'/%3E%3C/svg%3E");
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 90% 75%, 80% 35%, 70% 90%, 60% 35%, 50% 85%, 40% 35%, 30% 80%, 20% 35%, 10% 80%, 0 40%);
 }
 
 #contact form {
@@ -550,30 +505,21 @@ header nav a:hover {
 
 #contact input {
     flex: 1;
+    min-width: 0;
     padding: 12px 18px;
     border-radius: 10px;
     border: 1.5px solid #B8A5AC;
-    background-color: #FFFFFF;
+    background: white;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
-    outline: none;
-}
-
-#contact input:focus {
-    border-color: #222;
 }
 
 #contact button {
-    background-color: #F5CD56;
-    color: #1E1E1E;
+    background: #F5CD56;
     border: 1.5px solid #222;
     border-radius: 10px;
     padding: 12px 24px;
     font-weight: 700;
-}
-
-#contact button:hover {
-    background-color: #f0be2d;
 }
 
 #contact ul {
@@ -583,34 +529,25 @@ header nav a:hover {
     gap: 14px;
 }
 
-#contact ul li a:hover {
-    transform: translateY(-4px) scale(1.1);
-    display: inline-block;
-}
-
 #contact ul img {
     width: 38px;
     height: 38px;
     object-fit: contain;
 }
 
-#contact>img[src*="Ellipse 7.png"] {
+#contact>img {
     grid-area: photo;
     width: 260px;
     height: 260px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 
-#contact>img[src*="Ellipse 7.png"]:hover {
-    transform: scale(1.04);
-}
+/* FOOTER */
 
-/* ================= ФУТЕР ================= */
 footer {
-    background-color: #F4CE5C;
-    padding: 32px 0 0;
+    background: #F4CE5C;
+    padding: 32px 24px 0;
     display: grid;
     grid-template-columns: auto auto 1fr;
     grid-template-areas:
@@ -620,16 +557,12 @@ footer {
     gap: 24px 48px;
 }
 
-footer>img[src*="logo.png"] {
+footer>img {
     grid-area: logo;
     width: 96px;
     height: 96px;
     object-fit: contain;
-    margin-left: max(24px, calc((100% - 1120px) / 2 + 24px));
-}
-
-footer>img[src*="logo.png"]:hover {
-    transform: rotate(-5deg) scale(1.05);
+    margin-left: max(0px, calc((100% - 1120px)/2));
 }
 
 footer nav {
@@ -647,30 +580,23 @@ footer nav a {
     font-weight: 700;
 }
 
-footer nav a:hover {
-    opacity: 0.7;
-}
-
-footer>input {
+footer form {
     grid-area: form;
     justify-self: end;
-    margin-right: calc(max(24px, calc((100% - 1120px) / 2 + 24px)) + 135px);
+    display: flex;
+    gap: 8px;
+}
+
+footer input {
     padding: 10px 14px;
     border-radius: 6px;
     border: 1.5px solid #444;
-    background-color: #FFFFFF;
-    font-family: 'Nunito', sans-serif;
-    font-size: 13px;
     width: 220px;
-    outline: none;
 }
 
-footer>button {
-    grid-area: form;
-    justify-self: end;
-    margin-right: max(24px, calc((100% - 1120px) / 2 + 24px));
-    background-color: #1A1A1A;
-    color: #FFFFFF;
+footer button {
+    background: #1A1A1A;
+    color: white;
     border: none;
     border-radius: 6px;
     padding: 10px 20px;
@@ -679,15 +605,16 @@ footer>button {
 
 footer>p {
     grid-area: copy;
-    background-color: #0F0F0F;
-    color: #FFFFFF;
+    background: #0F0F0F;
+    color: white;
     text-align: center;
     padding: 12px 16px;
     font-size: 12px;
-    width: 100%;
+    margin: 0 -24px;
 }
 
-/* ================= АДАПТИВНОСТЬ ================= */
+/* АДАПТИВНОСТЬ */
+
 @media (max-width: 960px) {
     #hero h1 {
         font-size: 42px;
@@ -747,8 +674,12 @@ footer>p {
         padding-top: 85px;
     }
 
+    #hero h1 {
+        font-size: 38px;
+    }
+
     #hero p,
-    #hero img.hero-image {
+    #hero img {
         margin: 0 auto;
         justify-self: center;
     }
@@ -767,20 +698,23 @@ footer>p {
     }
 
     #menu h2,
-    #menu p:nth-of-type(1) {
+    #menu p {
         text-align: center;
         margin: 0 auto;
     }
 
-    #menu img.hero-image,
-    #menu button {
+    #menu img {
         justify-self: center;
         margin: 0 auto;
     }
 
+    #menu button {
+        justify-self: center;
+        margin: 5px auto;
+    }
+
     #menu button:last-of-type {
-        margin-top: 10px;
-        margin-left: auto;
+        margin: 5px auto;
     }
 
     #offers {
@@ -790,6 +724,27 @@ footer>p {
     #offers>ul {
         grid-template-columns: 1fr;
         max-width: 380px;
+    }
+
+    #app {
+        padding-bottom: 50px;
+    }
+
+    #app h2 {
+        font-size: 32px;
+    }
+
+    #app>img[src*="Group 56.png"] {
+        display: none;
+    }
+
+    #app>ul {
+        gap: 10px;
+    }
+
+    #app>ul>li {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 
     #contact {
@@ -804,7 +759,7 @@ footer>p {
 
     #contact form {
         flex-direction: column;
-        margin: 0 auto;
+        margin: auto;
         width: 100%;
     }
 
@@ -813,10 +768,13 @@ footer>p {
         width: 100%;
     }
 
-    #contact ul,
-    #contact>img[src*="Ellipse 7.png"] {
+    #contact ul {
         justify-content: center;
-        margin: 0 auto;
+        margin: auto;
+    }
+
+    #contact>img {
+        margin: auto;
     }
 
     footer {
@@ -824,31 +782,60 @@ footer>p {
         grid-template-areas:
             "logo"
             "nav"
-            "input"
-            "btn"
+            "form"
             "copy";
         text-align: center;
         gap: 16px;
     }
 
-    footer>img[src*="logo.png"],
-    footer>input,
-    footer>button {
-        margin: 0 auto;
+    footer>img {
+        margin: auto;
+    }
+
+    footer nav ul {
+        align-items: center;
+    }
+
+    footer form {
         justify-self: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    footer input,
+    footer button {
+        width: 100%;
+    }
+
+    footer>p {
+        margin: 0 -24px;
     }
 }
 
-</style></head><body><a href="#hero"><img src="img/logo1.png" alt="fghgd" class="logo1"></a><header><nav><ul><li><a href="#hero">Головна</a></li><li><a href="#menu">Меню</a></li><li><a href="#offers">Пропозиції</a></li><li><a href="#app">Застосунок</a></li><li><a href="#contact">Контакти</a></li></ul></nav></header><main><section id="hero"><h1>Спробуй найкраще морозиво</h1><img src="img/Untitled design (27) 1.png" alt="морозиво" class="hero-image"><p>Справжнє італійське джелато з натуральних інгредієнтів. Ми створюємо морозиво з любов'ю вже понад 15 років,
- використовуючи лише свіжі фрукти,
-справжні вершки та перевірені сімейні рецепти</p></section><section id="menu"><h2>Ми дбаємо про тебе</h2><img src="img/Untitled design (6) 1.png" alt="Меню" class="hero-image"><p>Наше морозиво — це не просто десерт,
+@media (max-width: 400px) {
+    #hero h1 {
+        font-size: 32px;
+    }
+
+    #offers h2 {
+        font-size: 28px;
+    }
+
+    #contact>img {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+</style></head><body><a href="#hero"><img src="img/logo1.png" alt="Логотип" class="logo1"></a><header><nav><ul><li><a href="#hero">Головна</a></li><li><a href="#menu">Меню</a></li><li><a href="#offers">Пропозиції</a></li><li><a href="#app">Застосунок</a></li><li><a href="#contact">Контакти</a></li></ul></nav></header><main><section id="hero"><h1>Спробуй найкраще морозиво</h1><img src="img/Untitled design (27) 1.png" alt="Морозиво" class="hero-image"><p>Справжнє італійське джелато з натуральних інгредієнтів. Ми створюємо морозиво з любов'ю вже понад 15 років, використовуючи лише свіжі фрукти, справжні вершки та перевірені сімейні рецепти.</p>
+ </section><section id="menu"><h2>Ми дбаємо про тебе</h2><img src="img/Untitled design (6) 1.png" alt="Меню" class="hero-image"><p>Наше морозиво — це не просто десерт,
 це справжня магія смаку. Ми використовуємо тільки натуральне молоко з українських ферм та свіжі сезонні фрукти. Кожна порція містить любов та турботу наших майстрів,
-які вдосконалюють рецепти вже три покоління.</p><img src="img/Untitled design (7) 1.png" alt="Меню" class="hero-image"><p>Історія нашої родинної справи почалася у 1998 році,
+які вдосконалюють рецепти вже три покоління.</p><img src="img/Untitled design (7) 1.png" alt="Морозиво" class="hero-image"><p>Історія нашої родинної справи почалася у 1998 році,
 коли бабуся Марія вперше приготувала морозиво за італійським рецептом. Сьогодні ми зберігаємо традиції,
-поєднуючи їх із сучасними технологіями. Ми віримо: морозиво має приносити радість ! Тому ретельно обираємо кожен інгредієнт та контролюємо якість на всіх етапах виробництва.</p><button>Дізнатися більше</button><button>Завантажити застосунок</button></section><section id="offers"><h2>Наш асортимент</h2><ul><li><img src="img/Untitled design (16) 1 (1).png" alt="Ріжки"><h3>Ріжки</h3><img src="img/Untitled design (21) 1.png" alt=""><p>Хрусткі вафельні ріжки з ніжним морозивом. Класика,
-яка ніколи не виходить з моди !</p><button><img src="img/Arrow 1.png" alt=""></button></li><li><img src="img/Untitled design (13) 2.png" alt="Напої"><h3>Напої</h3><img src="img/Untitled design (19) 1.png" alt=""><p>Свіжі та натуральні напої,
-які допоможуть вам почути себе краще.</p><button><img src="img/Arrow 1.png" alt=""></button></li><li><img src="img/Untitled design (11) 1.png" alt="Морозиво"><h3>Морозиво</h3><img src="img/Untitled design (18) 1.png" alt=""><p>Різноманітні смаки на паличці та у стаканчиках. Понад 20 видів на будь-який смак !</p><button><img src="img/Arrow 1.png" alt=""></button></li></ul></section><section id="app"><ul><li>Ваніль</li><li>Чорниця</li><li>Шоколад</li><li>Полуниця</li><li>Фісташка</li><li>Манго</li></ul><img src="img/Group 63.png" alt=""><h2>Небесні смаки</h2><img src="img/Group 56.png" alt=""><p>Відкрийте для себе унікальні комбінації смаків ! Від класичної ванілі до екзотичного манго — кожен знайде своє улюблене морозиво. Наші майстри постійно експериментують,
-створюючи нові рецепти.</p><button>Дізнатися більше</button><button>Спробувати </button></section><section id="contact"><form><input type="text" type="email" placeholder="Введіть ваш email"><button>Зв'язатися </button> </form> <ul> 
- <li><a href="https://www.instagram.com/" target="_blank"><img src="img/icon-park_instagram.png" alt="Instagram"></a></li><li><a href="https://www.facebook.com/" target="_blank"><img src="img/openmoji_facebook.png" alt="Facebook"></a></li></ul><img src="img/Ellipse 7.png" alt=""></section></main><footer><img src="img/logo.png" alt=""><nav><ul><li><a href="">Головна</a></li><li><a href="">Про нас</a></li><li><a href="">Контакти</a></li></ul><form action=""></nav><input type="text" placeholder="Підписатися на новини"><button>Підписатися</button><p>© 2026 Rainbow Icecream Лендінг розроблено [Ім'я учня]</p>
+поєднуючи їх із сучасними технологіями. Ми віримо: морозиво має приносити радість ! Тому ретельно обираємо кожен інгредієнт та контролюємо якість на всіх етапах виробництва.</p><button type="button">Дізнатися більше</button><button type="button">Завантажити застосунок</button></section><section id="offers"><h2>Наш асортимент</h2><ul><li><img src="img/Untitled design (16) 1 (1).png" alt="Ріжки"><h3>Ріжки</h3><img src="img/Untitled design (21) 1.png" alt=""><p>Хрусткі вафельні ріжки з ніжним морозивом. Класика,
+яка ніколи не виходить з моди !</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li><li><img src="img/Untitled design (13) 2.png" alt="Напої"><h3>Напої</h3><img src="img/Untitled design (19) 1.png" alt=""><p>Свіжі та натуральні напої,
+які допоможуть вам почуватися краще.</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li><li><img src="img/Untitled design (11) 1.png" alt="Морозиво"><h3>Морозиво</h3><img src="img/Untitled design (18) 1.png" alt=""><p>Різноманітні смаки на паличці та у стаканчиках. Понад 20 видів на будь-який смак !</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li></ul></section><section id="app"><ul><li>Ваніль</li><li>Чорниця</li><li>Шоколад</li><li>Полуниця</li><li>Фісташка</li><li>Манго</li></ul><img src="img/Group 63.png" alt="Морозиво"><h2>Небесні смаки</h2><img src="img/Group 56.png" alt="Декоративний елемент"><p>Відкрийте для себе унікальні комбінації смаків ! Від класичної ванілі до екзотичного манго — кожен знайде своє улюблене морозиво. Наші майстри постійно експериментують,
+створюючи нові рецепти.</p><button type="button">Дізнатися більше</button><button type="button">Спробувати</button></section><section id="contact"><form><input type="email" placeholder="Введіть ваш email" required><button type="submit">Зв'язатися</button>
+ </form><ul><li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon-park_instagram.png" alt="Instagram"></a></li><li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="img/openmoji_facebook.png" alt="Facebook"></a></li></ul><img src="img/Ellipse 7.png" alt="Морозиво"></section></main><footer><img src="img/logo.png" alt="Логотип"><nav><ul><li><a href="#hero">Головна</a></li><li><a href="#menu">Про нас</a></li><li><a href="#contact">Контакти</a></li></ul></nav><form><input type="email" placeholder="Підписатися на новини" required><button type="submit">Підписатися</button></form><p>© 2026 Rainbow Icecream. Лендінг розроблено [Ім'я учня]</p>
 
 </footer></body></html>
