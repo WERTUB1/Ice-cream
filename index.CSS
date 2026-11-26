@@ -1,7 +1,14 @@
-< !DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rainbow Icecream</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><style>* {
-    box-sizing: border-box;
+/* =====================================================
+   RAINBOW ICECREAM
+   Повний дизайн сайту за твоїм макетом
+===================================================== */
+
+/* =============== 1. RESET =============== */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -9,833 +16,1127 @@ html {
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    color: #1E1E1E;
-    background-color: #FF94A8;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='320' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ff829b' fill-opacity='0.55' d='M0,128L80,144C160,160,320,192,480,181.3C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L0,320Z'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-position: 0 260px;
-    background-size: 100% 340px;
-    line-height: 1.5;
+    background: #202020;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.25s ease;
-}
-
 img {
-    max-width: 100%;
     display: block;
-    transition: transform 0.35s ease;
+    max-width: 100%;
 }
 
 button {
-    font-family: 'Nunito', sans-serif;
+    font-family: inherit;
     cursor: pointer;
-    transition: 0.25s ease;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+input {
+    font-family: inherit;
 }
 
-/* ЛОГОТИП */
+/* =============== 2. ЗАГАЛЬНІ НАЛАШТУВАННЯ =============== */
 
-body>a:first-of-type {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-}
-
-body>a:first-of-type:hover {
-    transform: translateX(-50%) scale(1.07);
-}
-
-img.logo1 {
-    width: 78px;
-    height: 78px;
-    object-fit: contain;
-    border-radius: 50%;
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
     background: white;
-    padding: 3px;
-    border: 1.5px dashed #444;
 }
 
-/* ШАПКА */
+header,
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #101010;
+    font-weight: 900;
+}
+
+p {
+    color: #333;
+}
+
+/* =============== 3. ЛОГОТИП =============== */
+
+body>a {
+    position: absolute;
+    z-index: 20;
+    top: 12px;
+    left: calc(50% - 500px);
+}
+
+.logo1 {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo1:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* =============== 4. HEADER =============== */
 
 header {
-    padding-top: 26px;
     position: relative;
     z-index: 10;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffb4c7;
+    padding: 12px 25px;
 }
 
 header nav {
-    background: white;
-    border: 1.5px solid #444;
-    border-radius: 999px;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 12px 32px;
+    background: #fff;
+    border: 1px solid #e5b6c5;
+    border-radius: 30px;
+    padding: 12px 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 header nav ul {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-}
-
-header nav ul li:nth-child(3) {
-    margin-right: 48px;
-}
-
-header nav ul li:nth-child(4) {
-    margin-left: 48px;
+    gap: 23px;
 }
 
 header nav a {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    transition: color 0.3s;
 }
 
 header nav a:hover {
-    color: #E04F6D;
+    color: #ed6592;
 }
 
-/* HERO */
+/* Маленька декоративна крапка біля меню */
+
+header nav li:last-child a::after {
+    content: " ♥";
+    color: #ec78a0;
+}
+
+/* =============== 5. ПЕРША СЕКЦІЯ HERO =============== */
 
 #hero {
-    max-width: 1120px;
-    margin: auto;
-    padding: 44px 24px 70px;
+    min-height: 510px;
+    padding: 80px 9% 65px;
+    background: #ff9fb5;
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    grid-template-areas:
-        "title image"
-        "text image";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     align-items: center;
-    column-gap: 32px;
+    column-gap: 35px;
+    position: relative;
+}
+
+/* Декоративні хвилі */
+
+#hero::before {
+    content: "";
+    position: absolute;
+    width: 115%;
+    height: 100px;
+    left: -8%;
+    top: -55px;
+    background: #ffb9c9;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 100px;
+    bottom: -55px;
+    left: -10%;
+    background: #ff7f9e;
+    border-radius: 50%;
+    opacity: 0.6;
 }
 
 #hero h1 {
-    grid-area: title;
-    font-size: 56px;
-    line-height: 1.05;
-    align-self: end;
-    margin-bottom: 18px;
-}
-
-#hero p {
-    grid-area: text;
-    font-size: 14px;
-    font-weight: 600;
-    max-width: 410px;
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 470px;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
 }
 
 #hero img {
-    grid-area: image;
-    width: 100%;
-    max-width: 530px;
-    justify-self: end;
-    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
-}
-
-#hero img:hover {
-    transform: scale(1.03) translateY(-4px);
-}
-
-/* MENU */
-
-#menu {
-    background: #DCEEFF;
-    padding: 40px max(24px, calc((100% - 1120px)/2 + 24px)) 55px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "splash heading"
-        "splash desc1"
-        "story milk"
-        "buttons milk";
-    column-gap: 44px;
-    row-gap: 16px;
-    position: relative;
-}
-
-#menu img[src*="Untitled design (6) 1.png"] {
-    grid-area: splash;
-    width: 100%;
-    max-width: 450px;
-    align-self: start;
-}
-
-#menu h2 {
-    grid-area: heading;
-    font-size: 40px;
-    text-align: right;
-    align-self: end;
-    padding-top: 20px;
-}
-
-#menu p:nth-of-type(1) {
-    grid-area: desc1;
-    text-align: right;
-    max-width: 440px;
-    justify-self: end;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-#menu p:nth-of-type(2) {
-    grid-area: story;
-    font-size: 14px;
-    font-weight: 600;
-    max-width: 445px;
-    align-self: end;
-    margin-top: 12px;
-}
-
-#menu img[src*="Untitled design (7) 1.png"] {
-    grid-area: milk;
-    width: 100%;
-    max-width: 490px;
-    justify-self: end;
-    align-self: end;
-    margin-bottom: -25px;
-}
-
-#menu img:hover {
-    transform: translateY(-4px);
-}
-
-#menu button {
-    grid-area: buttons;
-    padding: 11px 24px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 13px;
-    border: 1.5px solid #222;
-    margin-top: 8px;
-}
-
-#menu button:first-of-type {
-    background: #F5CD56;
-}
-
-#menu button:last-of-type {
-    background: white;
-    border-color: #D8C99B;
-    margin-left: 185px;
-}
-
-/* OFFERS */
-
-#offers {
-    background: #FFD6E2;
-    padding: 65px 24px 115px;
     position: relative;
     z-index: 2;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.08));
 }
+
+#hero p {
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 5px;
+}
+
+/* Кнопка в першій секції */
+
+#hero h1::after {
+    content: " ✨";
+    color: #ffdf60;
+    font-size: 30px;
+}
+
+/* =============== 6. СЕКЦІЯ ПРО НАС =============== */
+
+#menu {
+    background: #d9edff;
+    min-height: 530px;
+    padding: 50px 9% 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    align-items: center;
+    gap: 20px 40px;
+}
+
+/* Заголовок */
+
+#menu h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+    font-size: clamp(30px, 4vw, 45px);
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+}
+
+/* Перше зображення - молочний сплеск */
+
+#menu img:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+/* Перший текст */
+
+#menu p:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Друге зображення - упаковка */
+
+#menu img:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Другий текст */
+
+#menu p:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Кнопки */
+
+#menu button {
+    grid-row: 4;
+    width: fit-content;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: #ffdc65;
+    border: 1px solid #252525;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+#menu button:nth-of-type(1) {
+    grid-column: 1;
+    justify-self: start;
+}
+
+#menu button:nth-of-type(2) {
+    grid-column: 2;
+    justify-self: start;
+    background: #fff;
+}
+
+#menu button:hover {
+    background: #ffb5c9;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =============== 7. СЕКЦІЯ АСОРТИМЕНТУ =============== */
+
+#offers {
+    background: #ffcddd;
+    padding: 45px 8% 60px;
+    text-align: center;
+}
+
+/* Заголовок */
 
 #offers h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 95px;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 900;
+    margin-bottom: 35px;
 }
 
-#offers>ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    max-width: 960px;
-    margin: auto;
+/* Картки */
+
+#offers ul {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
 }
 
-#offers>ul>li {
-    background: #DCF0FF;
-    border-radius: 22px;
-    padding: 0 24px 28px;
-    text-align: center;
+/* Окрема картка */
+
+#offers li {
+    position: relative;
+    width: 33.333%;
+    min-width: 0;
+    padding: 15px 14px 20px;
+    background: #d8edff;
+    border-radius: 13px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    transition: 0.3s ease;
+    box-shadow: 0 5px 12px rgba(90, 125, 150, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#offers>ul>li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+#offers li:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 12px 20px rgba(120, 100, 130, 0.18);
 }
 
-#offers>ul>li>img:first-child {
-    height: 170px;
-    width: auto;
+/* Великі картинки */
+
+#offers li>img:first-child {
+    width: 100%;
+    height: 175px;
     object-fit: contain;
-    margin-top: -78px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
+
+/* Назви карток */
 
 #offers h3 {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin: 5px 0 10px;
+    font-weight: 900;
 }
 
-#offers>ul>li>img:nth-of-type(2) {
-    width: 44px;
-    height: 44px;
+/* Маленькі декоративні картинки */
+
+#offers li>img:nth-of-type(2) {
+    width: 45px;
+    height: 35px;
     object-fit: contain;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
-#offers p {
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 22px;
-    flex-grow: 1;
+/* Опис */
+
+#offers li p {
+    font-size: 12px;
+    line-height: 1.65;
+    text-align: center;
+    max-width: 220px;
+    min-height: 60px;
+    margin-bottom: 13px;
 }
 
-#offers button {
-    width: 42px;
-    height: 42px;
+/* Кнопки зі стрілкою */
+
+#offers li button {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: #F7B2C4;
-    border: 1.5px solid #222;
+    border: 1px solid #222;
+    background: #ffb4c8;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#offers button:hover {
-    background: #F5CD56;
-    transform: scale(1.12);
+#offers li button img {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
 }
 
-#offers button img {
-    width: 18px;
+#offers li button:hover {
+    background: #ffda65;
+    transform: rotate(-10deg) scale(1.12);
 }
 
-/* APP */
+/* =============== 8. СЕКЦІЯ НЕБЕСНІ СМАКИ =============== */
 
 #app {
-    background: #DCEEFF;
-    padding: 0 24px 80px;
+    min-height: 500px;
+    padding: 55px 9% 70px;
+    background: #d9edff;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "pills pills"
-        "cone title"
-        "cone text"
-        "cone buttons";
+    grid-template-rows: auto auto auto auto auto;
     align-items: center;
-    column-gap: 48px;
+    gap: 15px 35px;
     position: relative;
 }
 
-#app::before {
-    content: "";
-    position: absolute;
-    top: -36px;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #DCEEFF;
-    border-radius: 50% 50% 0 0;
-}
+/* Верхні кольорові плашки */
 
-#app>ul {
-    grid-area: pills;
+#app ul {
+    grid-column: 1 / 3;
+    grid-row: 1;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    position: relative;
-    z-index: 3;
-    transform: translateY(-28px);
-    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 15px;
 }
 
-#app>ul>li {
-    padding: 10px 28px;
-    border-radius: 999px;
-    border: 1.5px solid #222;
-    font-weight: 800;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: 0.25s ease;
+#app ul li {
+    padding: 8px 18px;
+    border: 1px solid #282828;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    transform: rotate(-5deg);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
 }
 
-#app>ul>li:hover {
-    transform: translateY(-5px) scale(1.06);
+#app ul li:hover {
+    transform: rotate(0deg) translateY(-5px);
 }
 
-#app>ul>li:nth-child(1) {
-    background: #FCE9B5;
-    transform: rotate(-8deg) translateY(6px);
+#app ul li:nth-child(1) {
+    background: #ffe17b;
 }
 
-#app>ul>li:nth-child(2) {
-    background: #B484BD;
-    transform: rotate(-4deg) translateY(2px);
+#app ul li:nth-child(2) {
+    background: #c99bdc;
+    transform: rotate(4deg);
 }
 
-#app>ul>li:nth-child(3) {
-    background: #8D5544;
-    color: white;
+#app ul li:nth-child(3) {
+    background: #dba27f;
 }
 
-#app>ul>li:nth-child(4) {
-    background: #F497A9;
+#app ul li:nth-child(4) {
+    background: #ffb5c8;
+    transform: rotate(3deg);
 }
 
-#app>ul>li:nth-child(5) {
-    background: #9CC98D;
-    transform: rotate(5deg) translateY(3px);
+#app ul li:nth-child(5) {
+    background: #a8d98e;
 }
 
-#app>ul>li:nth-child(6) {
-    background: #F6C85F;
-    transform: rotate(8deg) translateY(8px);
+#app ul li:nth-child(6) {
+    background: #ffd85d;
+    transform: rotate(5deg);
 }
 
-#app>img[src*="Group 63.png"] {
-    grid-area: cone;
+/* Великий ріжок */
+
+#app>img:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2 / 5;
     width: 100%;
-    max-width: 450px;
-    justify-self: center;
+    height: 310px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.08));
 }
+
+/* Заголовок */
 
 #app h2 {
-    grid-area: title;
-    font-size: 40px;
-    text-align: center;
-    align-self: end;
-    margin-bottom: 14px;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
-#app>img[src*="Group 56.png"] {
-    grid-area: title;
-    width: 58px;
-    justify-self: start;
-    margin-left: 42px;
-    align-self: end;
-    margin-bottom: 18px;
+/* Друге зображення */
+
+#app>img:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 3;
+    width: 65px;
+    height: 55px;
+    object-fit: contain;
 }
+
+/* Опис */
 
 #app p {
-    grid-area: text;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    max-width: 440px;
-    justify-self: center;
-    margin-bottom: 22px;
+    grid-column: 2;
+    grid-row: 4;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 380px;
 }
+
+/* Кнопки */
 
 #app button {
-    grid-area: buttons;
-    padding: 12px 24px;
-    border-radius: 999px;
+    grid-row: 5;
+    justify-self: start;
+    padding: 11px 22px;
+    border-radius: 25px;
+    border: 1px solid #222;
+    background: #ffdb62;
+    font-size: 13px;
     font-weight: 700;
-    border: 1.5px solid #222;
-    justify-self: center;
 }
 
-#app button:first-of-type {
-    background: #F5CD56;
-    margin-right: 145px;
-}
-
-#app button:last-of-type {
+#app button:nth-of-type(2) {
+    grid-column: 2;
     background: white;
-    border-color: #D8C99B;
-    margin-left: 115px;
+    margin-left: 145px;
 }
 
-/* CONTACT */
+#app button:nth-of-type(1) {
+    grid-column: 2;
+}
+
+#app button:hover {
+    background: #ffb6ca;
+    transform: translateY(-4px);
+}
+
+/* =============== 9. КОНТАКТИ =============== */
 
 #contact {
-    background: #FFD6E2;
-    padding: 115px 24px 70px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-        "form photo"
-        "socials photo";
+    min-height: 240px;
+    background: #ffcddd;
+    padding: 55px 9% 35px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px 40px;
-    position: relative;
+    gap: 25px;
 }
+
+/* Декоративні краплі зверху */
 
 #contact::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -15px;
     left: 0;
     width: 100%;
-    height: 92px;
-    background: white;
-    clip-path: polygon(0 0, 100% 0, 100% 40%, 90% 75%, 80% 35%, 70% 90%, 60% 35%, 50% 85%, 40% 35%, 30% 80%, 20% 35%, 10% 80%, 0 40%);
+    height: 45px;
+    background-image: radial-gradient(circle at 10px 15px,
+            #fff 8px,
+            transparent 9px);
+    background-size: 22px 25px;
+    opacity: 0.9;
 }
 
+#contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: repeating-linear-gradient(90deg,
+            transparent 0 8px,
+            #fff 8px 12px,
+            transparent 12px 22px);
+    opacity: 0.8;
+}
+
+/* Форма */
+
 #contact form {
-    grid-area: form;
+    position: relative;
+    z-index: 2;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 12px;
-    max-width: 480px;
+    gap: 10px;
 }
 
 #contact input {
-    flex: 1;
-    min-width: 0;
-    padding: 12px 18px;
-    border-radius: 10px;
-    border: 1.5px solid #B8A5AC;
-    background: white;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
+    width: 230px;
+    height: 40px;
+    padding: 10px 14px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 13px;
+    outline: none;
+    transition: box-shadow 0.3s;
 }
 
-#contact button {
-    background: #F5CD56;
-    border: 1.5px solid #222;
-    border-radius: 10px;
-    padding: 12px 24px;
+#contact input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 170, 195, 0.5);
+}
+
+/* Кнопка */
+
+#contact form button {
+    background: #ffda64;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 13px;
     font-weight: 700;
 }
 
+#contact form button:hover {
+    background: #ffadbf;
+}
+
+/* Соціальні мережі */
+
 #contact ul {
-    grid-area: socials;
+    position: relative;
+    z-index: 2;
     display: flex;
+    gap: 15px;
     align-items: center;
-    gap: 14px;
 }
 
 #contact ul img {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+    transition: transform 0.3s;
 }
+
+#contact ul img:hover {
+    transform: scale(1.2);
+}
+
+/* Фото з морозивом */
 
 #contact>img {
-    grid-area: photo;
-    width: 260px;
-    height: 260px;
+    position: relative;
+    z-index: 2;
+    width: 155px;
+    height: 155px;
     border-radius: 50%;
     object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* FOOTER */
+/* =============== 10. FOOTER =============== */
 
 footer {
-    background: #F4CE5C;
-    padding: 32px 24px 0;
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    grid-template-areas:
-        "logo nav form"
-        "copy copy copy";
+    min-height: 130px;
+    padding: 20px 8%;
+    background: #ffd45f;
+    display: flex;
     align-items: center;
-    gap: 24px 48px;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
+
+/* Логотип */
 
 footer>img {
-    grid-area: logo;
-    width: 96px;
-    height: 96px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
-    margin-left: max(0px, calc((100% - 1120px)/2));
 }
 
-footer nav {
-    grid-area: nav;
-}
+/* Навігація */
 
 footer nav ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
 footer nav a {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-footer form {
-    grid-area: form;
-    justify-self: end;
-    display: flex;
-    gap: 8px;
+footer nav a:hover {
+    color: #ec6692;
 }
+
+/* Підписка */
 
 footer input {
-    padding: 10px 14px;
-    border-radius: 6px;
-    border: 1.5px solid #444;
-    width: 220px;
+    width: 180px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #888;
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
 }
 
 footer button {
-    background: #1A1A1A;
+    padding: 10px 18px;
+    background: #171717;
     color: white;
-    border: none;
     border-radius: 6px;
-    padding: 10px 20px;
-    font-weight: 700;
-}
-
-footer>p {
-    grid-area: copy;
-    background: #0F0F0F;
-    color: white;
-    text-align: center;
-    padding: 12px 16px;
     font-size: 12px;
-    margin: 0 -24px;
 }
 
-/* АДАПТИВНОСТЬ */
+footer button:hover {
+    background: #ec6692;
+}
 
-@media (max-width: 960px) {
+/* Нижній текст */
+
+footer p {
+    width: 100%;
+    padding-top: 13px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-size: 11px;
+    color: #333;
+}
+
+/* =====================================================
+   11. АНІМАЦІЇ
+===================================================== */
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#hero img {
+    animation: floating 4s ease-in-out infinite;
+}
+
+#app>img:nth-of-type(1) {
+    animation: floating 5s ease-in-out infinite;
+}
+
+/* Плавна поява карток */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#offers li {
+    animation: appear 0.8s ease both;
+}
+
+#offers li:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+#offers li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* =====================================================
+   12. ПЛАНШЕТИ
+===================================================== */
+
+@media (max-width: 900px) {
+
+    body>a {
+        left: 15px;
+    }
+
+    header {
+        padding: 12px 15px;
+    }
+
+    header nav ul {
+        gap: 14px;
+    }
+
+    header nav a {
+        font-size: 12px;
+    }
+
+    #hero {
+        min-height: 430px;
+        padding: 65px 7%;
+        gap: 20px;
+    }
+
     #hero h1 {
         font-size: 42px;
     }
 
-    #offers>ul {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 95px;
-    }
-
-    #app {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "pills"
-            "title"
-            "text"
-            "buttons"
-            "cone";
-        text-align: center;
-    }
-
-    #app>img[src*="Group 56.png"] {
-        justify-self: center;
-        margin-left: 0;
-    }
-
-    #app button:first-of-type,
-    #app button:last-of-type {
-        margin: 0 8px 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    header nav {
-        border-radius: 24px;
-        padding: 14px 18px;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 18px;
-    }
-
-    header nav ul li:nth-child(3),
-    header nav ul li:nth-child(4) {
-        margin: 0;
-    }
-
-    #hero {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "title"
-            "text"
-            "image";
-        text-align: center;
-        padding-top: 85px;
-    }
-
-    #hero h1 {
-        font-size: 38px;
-    }
-
-    #hero p,
     #hero img {
-        margin: 0 auto;
-        justify-self: center;
+        height: 260px;
     }
 
     #menu {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "heading"
-            "desc1"
-            "splash"
-            "story"
-            "buttons"
-            "milk";
-        text-align: center;
-        padding: 40px 20px 60px;
+        padding: 40px 7%;
+        gap: 15px 25px;
     }
 
-    #menu h2,
-    #menu p {
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    #menu img {
-        justify-self: center;
-        margin: 0 auto;
-    }
-
-    #menu button {
-        justify-self: center;
-        margin: 5px auto;
-    }
-
-    #menu button:last-of-type {
-        margin: 5px auto;
+    #menu h2 {
+        font-size: 34px;
     }
 
     #offers {
-        padding: 60px 20px 100px;
+        padding: 40px 5%;
     }
 
-    #offers>ul {
-        grid-template-columns: 1fr;
-        max-width: 380px;
+    #offers ul {
+        gap: 12px;
+    }
+
+    #offers li {
+        padding: 12px 10px;
+    }
+
+    #offers li>img:first-child {
+        height: 140px;
     }
 
     #app {
-        padding-bottom: 50px;
-    }
-
-    #app h2 {
-        font-size: 32px;
-    }
-
-    #app>img[src*="Group 56.png"] {
-        display: none;
-    }
-
-    #app>ul {
-        gap: 10px;
-    }
-
-    #app>ul>li {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: 45px 7%;
     }
 
     #contact {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "form"
-            "socials"
-            "photo";
-        text-align: center;
-        padding: 105px 20px 60px;
-    }
-
-    #contact form {
-        flex-direction: column;
-        margin: auto;
-        width: 100%;
-    }
-
-    #contact input,
-    #contact button {
-        width: 100%;
-    }
-
-    #contact ul {
-        justify-content: center;
-        margin: auto;
-    }
-
-    #contact>img {
-        margin: auto;
-    }
-
-    footer {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "logo"
-            "nav"
-            "form"
-            "copy";
-        text-align: center;
-        gap: 16px;
-    }
-
-    footer>img {
-        margin: auto;
-    }
-
-    footer nav ul {
-        align-items: center;
-    }
-
-    footer form {
-        justify-self: center;
-        width: 100%;
-        flex-direction: column;
-    }
-
-    footer input,
-    footer button {
-        width: 100%;
-    }
-
-    footer>p {
-        margin: 0 -24px;
+        padding: 45px 7% 30px;
     }
 }
 
-@media (max-width: 400px) {
+/* =====================================================
+   13. МОБІЛЬНА ВЕРСІЯ
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body>a {
+        display: none;
+    }
+
+    header {
+        min-height: 55px;
+        padding: 10px 5px;
+    }
+
+    header nav {
+        padding: 10px 12px;
+    }
+
+    header nav ul {
+        gap: 9px;
+        flex-wrap: wrap;
+    }
+
+    header nav a {
+        font-size: 10px;
+    }
+
+    /* HERO */
+
+    #hero {
+        min-height: 350px;
+        padding: 45px 7% 35px;
+        column-gap: 8px;
+    }
+
     #hero h1 {
-        font-size: 32px;
+        font-size: 29px;
+        letter-spacing: -1px;
+    }
+
+    #hero h1::after {
+        font-size: 17px;
+    }
+
+    #hero img {
+        height: 180px;
+    }
+
+    #hero p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    /* MENU */
+
+    #menu {
+        min-height: 440px;
+        padding: 35px 6%;
+        gap: 12px;
+    }
+
+    #menu h2 {
+        font-size: 25px;
+    }
+
+    #menu img:nth-of-type(1) {
+        height: 140px;
+    }
+
+    #menu img:nth-of-type(2) {
+        height: 120px;
+    }
+
+    #menu p {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    #menu button {
+        padding: 8px 13px;
+        font-size: 10px;
+    }
+
+    /* OFFERS */
+
+    #offers {
+        padding: 35px 5%;
     }
 
     #offers h2 {
-        font-size: 28px;
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    #offers ul {
+        gap: 8px;
+    }
+
+    #offers li {
+        padding: 8px 6px 12px;
+        border-radius: 9px;
+    }
+
+    #offers li>img:first-child {
+        height: 100px;
+    }
+
+    #offers h3 {
+        font-size: 14px;
+    }
+
+    #offers li>img:nth-of-type(2) {
+        width: 25px;
+        height: 25px;
+    }
+
+    #offers li p {
+        font-size: 8px;
+        line-height: 1.4;
+        min-height: 48px;
+    }
+
+    #offers li button {
+        width: 27px;
+        height: 27px;
+    }
+
+    #offers li button img {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* APP */
+
+    #app {
+        min-height: 380px;
+        padding: 35px 6%;
+        gap: 10px;
+    }
+
+    #app ul {
+        gap: 7px;
+    }
+
+    #app ul li {
+        padding: 6px 10px;
+        font-size: 9px;
+    }
+
+    #app>img:nth-of-type(1) {
+        height: 210px;
+    }
+
+    #app h2 {
+        font-size: 26px;
+    }
+
+    #app>img:nth-of-type(2) {
+        width: 40px;
+        height: 35px;
+    }
+
+    #app p {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    #app button {
+        padding: 7px 12px;
+        font-size: 9px;
+    }
+
+    #app button:nth-of-type(2) {
+        margin-left: 90px;
+    }
+
+    /* CONTACT */
+
+    #contact {
+        min-height: 160px;
+        padding: 40px 6% 25px;
+        gap: 12px;
+    }
+
+    #contact input {
+        width: 130px;
+        height: 30px;
+        font-size: 9px;
+        padding: 7px;
+    }
+
+    #contact form {
+        gap: 6px;
+    }
+
+    #contact form button {
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+
+    #contact ul {
+        gap: 7px;
+    }
+
+    #contact ul img {
+        width: 23px;
+        height: 23px;
     }
 
     #contact>img {
-        width: 210px;
-        height: 210px;
+        width: 85px;
+        height: 85px;
+        border-width: 3px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        min-height: 100px;
+        padding: 12px 5%;
+        gap: 10px;
+    }
+
+    footer>img {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer nav {
+        font-size: 9px;
+    }
+
+    footer nav ul {
+        gap: 5px;
+    }
+
+    footer nav a {
+        font-size: 9px;
+    }
+
+    footer input {
+        width: 100px;
+        padding: 7px;
+        font-size: 8px;
+    }
+
+    footer button {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    footer p {
+        font-size: 8px;
+        padding-top: 8px;
     }
 }
-
-</style></head><body><a href="#hero"><img src="img/logo1.png" alt="Логотип" class="logo1"></a><header><nav><ul><li><a href="#hero">Головна</a></li><li><a href="#menu">Меню</a></li><li><a href="#offers">Пропозиції</a></li><li><a href="#app">Застосунок</a></li><li><a href="#contact">Контакти</a></li></ul></nav></header><main><section id="hero"><h1>Спробуй найкраще морозиво</h1><img src="img/Untitled design (27) 1.png" alt="Морозиво" class="hero-image"><p>Справжнє італійське джелато з натуральних інгредієнтів. Ми створюємо морозиво з любов'ю вже понад 15 років, використовуючи лише свіжі фрукти, справжні вершки та перевірені сімейні рецепти.</p>
- </section><section id="menu"><h2>Ми дбаємо про тебе</h2><img src="img/Untitled design (6) 1.png" alt="Меню" class="hero-image"><p>Наше морозиво — це не просто десерт,
-це справжня магія смаку. Ми використовуємо тільки натуральне молоко з українських ферм та свіжі сезонні фрукти. Кожна порція містить любов та турботу наших майстрів,
-які вдосконалюють рецепти вже три покоління.</p><img src="img/Untitled design (7) 1.png" alt="Морозиво" class="hero-image"><p>Історія нашої родинної справи почалася у 1998 році,
-коли бабуся Марія вперше приготувала морозиво за італійським рецептом. Сьогодні ми зберігаємо традиції,
-поєднуючи їх із сучасними технологіями. Ми віримо: морозиво має приносити радість ! Тому ретельно обираємо кожен інгредієнт та контролюємо якість на всіх етапах виробництва.</p><button type="button">Дізнатися більше</button><button type="button">Завантажити застосунок</button></section><section id="offers"><h2>Наш асортимент</h2><ul><li><img src="img/Untitled design (16) 1 (1).png" alt="Ріжки"><h3>Ріжки</h3><img src="img/Untitled design (21) 1.png" alt=""><p>Хрусткі вафельні ріжки з ніжним морозивом. Класика,
-яка ніколи не виходить з моди !</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li><li><img src="img/Untitled design (13) 2.png" alt="Напої"><h3>Напої</h3><img src="img/Untitled design (19) 1.png" alt=""><p>Свіжі та натуральні напої,
-які допоможуть вам почуватися краще.</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li><li><img src="img/Untitled design (11) 1.png" alt="Морозиво"><h3>Морозиво</h3><img src="img/Untitled design (18) 1.png" alt=""><p>Різноманітні смаки на паличці та у стаканчиках. Понад 20 видів на будь-який смак !</p><button type="button"><img src="img/Arrow 1.png" alt="Детальніше"></button></li></ul></section><section id="app"><ul><li>Ваніль</li><li>Чорниця</li><li>Шоколад</li><li>Полуниця</li><li>Фісташка</li><li>Манго</li></ul><img src="img/Group 63.png" alt="Морозиво"><h2>Небесні смаки</h2><img src="img/Group 56.png" alt="Декоративний елемент"><p>Відкрийте для себе унікальні комбінації смаків ! Від класичної ванілі до екзотичного манго — кожен знайде своє улюблене морозиво. Наші майстри постійно експериментують,
-створюючи нові рецепти.</p><button type="button">Дізнатися більше</button><button type="button">Спробувати</button></section><section id="contact"><form><input type="email" placeholder="Введіть ваш email" required><button type="submit">Зв'язатися</button>
- </form><ul><li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon-park_instagram.png" alt="Instagram"></a></li><li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="img/openmoji_facebook.png" alt="Facebook"></a></li></ul><img src="img/Ellipse 7.png" alt="Морозиво"></section></main><footer><img src="img/logo.png" alt="Логотип"><nav><ul><li><a href="#hero">Головна</a></li><li><a href="#menu">Про нас</a></li><li><a href="#contact">Контакти</a></li></ul></nav><form><input type="email" placeholder="Підписатися на новини" required><button type="submit">Підписатися</button></form><p>© 2026 Rainbow Icecream. Лендінг розроблено [Ім'я учня]</p>
-
-</footer></body></html>
